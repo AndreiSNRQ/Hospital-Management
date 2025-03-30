@@ -1,1 +1,0 @@
-"# Hospital-Management"  initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/AndreiSNRQ/Hospital-Management.gitgit push -u origin main
