@@ -10,7 +10,7 @@
             <ul class="nav nav-link flex-column mb-sm-auto mb-0 align-items-center align-items-sm-center" id="menu" style=" color: white ;">
 
             <!-- Modules -->
-                
+                <?if ($_SESSION['acc_type']=='0'): ?>
             <li class="my-2">
                 <a href="#submenu" data-bs-toggle="collapse" class="nav-link align-middle p-2">
                     <i class="fs-4 fa fa-clock"></i> <span class="ms-1 d-none d-sm-inline">Time Attendance</span></a>
@@ -73,6 +73,71 @@
                 </ul>
             </li>
             </ul>
+            <? endif ?>
+            <?if ($_SESSION['acc_type']=='1'): ?>
+            <li class="my-2">
+                <a href="#submenu" data-bs-toggle="collapse" class="nav-link align-middle p-2">
+                    <i class="fs-4 fa fa-clock"></i> <span class="ms-1 d-none d-sm-inline">Time Attendance</span></a>
+                <ul class="collapse nav flex-column ms-1 px-3" id="submenu" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="time tracking.php" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Attendance Tracking</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link disabled p-2 rounded-1"> <span class="d-none d-sm-inline">Disabled</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="my-2">
+                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link align-middle p-2">
+                    <i class="fs-4 fa fa-table"></i> <span class="ms-1 d-none d-sm-inline">Time Sheets</span></a>
+                <ul class="collapse nav flex-column ms-1 px-3" id="submenu1" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="my-2">
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link align-middle p-2">
+                    <i class="fs-4 fa fa-calendar-check"></i> <span class="ms-1 d-none d-sm-inline">Shifting Schedule</span></a>
+                <ul class="collapse nav flex-column ms-1 px-3" id="submenu2" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="my-2">
+                <a href="#submenu3" data-bs-toggle="collapse" class="nav-link align-middle p-2">
+                    <i class="fs-4 fa fas fa-briefcase"></i> <span class="ms-1 d-none d-sm-inline">Leave Management</span></a>
+                <ul class="collapse nav flex-column ms-1 px-3" id="submenu3" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                
+                </ul>
+            </li>
+            <li class="my-2">
+                <a href="#submenu4" data-bs-toggle="collapse" class="nav-link align-middle p-2">
+                    <i class="fs-4 fa fas fa-hand-middle-finger"></i> <span class="ms-1 d-none d-sm-inline">Claims & Reimbursements</span></a>
+                <ul class="collapse nav flex-column ms-1 px-3" id="submenu4" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link p-2 rounded-1"> <span class="d-none d-sm-inline">Item</span></a>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+            <? endif ?>
             <hr>
             <!-- dropdown user -->
             <div class="dropdown pb-4">
