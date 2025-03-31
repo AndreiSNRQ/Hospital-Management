@@ -64,31 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login and Register Page</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="min-h-screen flex items-center justify-center" style="background: url('logo.png') no-repeat center center;">
-    <div style="width:50%; min-height:100%;" class="bg-white bg-opacity-50 border">
-        <div class="grid grid-cols-4 text-center font-bold rounded-md" style="height: max-content;">
-            <div class="col-start-1 shadow-lg col-span-2 p-10 flex justify-center items-center grid grid-rows-2 grid-cols-3 gap-4">
-                <div class="col-start-2 text-2xl">Login</div>
-                <div class="col-span-3">
-                    <button id="loginButton" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold text-xl p-4 rounded">
-                        Login
-                    </button>
-                </div>
-            </div>
-            <div class="col-start-3 shadow-lg col-span-2 flex justify-center items-center grid grid-rows-2 grid-cols-3 gap-4 p-10">
-                <div class="col-start-2 text-2xl">Register</div>
-                <div class="col-span-3 flex justify-center items-center">
-                    <button id="registerButton" class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold text-xl p-4 rounded">
-                        Register
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -98,21 +73,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="bg-white rounded-lg p-8 w-full max-w-md relative">
             <h2 class="text-2xl text-center font-bold mb-4">Login</h2>
             <!-- Login Form -->
-            <form method="POST" action="">
+            <form>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-xl">Username</label>
-                    <input type="text" name="login_username" class="w-full px-3 text-xl py-2 border rounded" placeholder="Enter your username" required>
+                    <input type="text" class="w-full px-3 text-xl py-2 border rounded" placeholder="Enter your username">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700 text-xl">Password</label>
-                    <input type="password" name="login_password" class="w-full text-xl px-3 py-2 border rounded" placeholder="Enter your password" required>
+                    <input type="password" class="w-full text-xl px-3 py-2 border rounded" placeholder="Enter your password">
                 </div>
-                <button type="submit" name="login" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
+                <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4">
                     Submit
                 </button>
-                <button id="closeLoginModal" type="button" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4">
-                    Cancel
-                </button>
+                <button id="closeLoginModal" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4">Cancel</button>
             </form>
         </div>
     </div>
@@ -138,7 +111,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button type="submit" name="register" class="w-full bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 mb-4 px-4 rounded">
                     Register
                 </button>
-                <button id="closeRegisterModal" type="button" class="w-full bg-red-500 hover:bg
+                <button id="closeRegisterModal" class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Login Modal
+        const loginButton = document.getElementById('loginButton');
+        const closeLoginModal = document.getElementById('closeLoginModal');
+        const loginModal = document.getElementById('loginModal');
+
+        loginButton.addEventListener('click', function() {
+            loginModal.classList.remove('hidden');
+        });
+
+        closeLoginModal.addEventListener('click', function() {
+            loginModal.classList.add('hidden');
+        });
+
+        loginModal.addEventListener('click', function(e) {
+            if(e.target === loginModal) {
+                loginModal.classList.add('hidden');
+            }
+        });
+
+        // Register Modal
+        const registerButton = document.getElementById('registerButton');
+        const closeRegisterModal = document.getElementById('closeRegisterModal');
         const registerModal = document.getElementById('registerModal');
 
         registerButton.addEventListener('click', function() {
